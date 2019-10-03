@@ -40,7 +40,7 @@
 			android:text="＋10分"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:id="@+id/Add10MinButton"
+			android:id="@+id/ButtonAdd10Min"
 			android:textSize="24dp"
 			android:padding="8dp"
 			android:layout_weight="1" />
@@ -48,7 +48,7 @@
 			android:text="＋１分"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:id="@+id/Add1MinButton"
+			android:id="@+id/ButtonAdd1Min"
 			android:textSize="24dp"
 			android:padding="8dp"/>
 	</LinearLayout>
@@ -88,32 +88,32 @@
 			android:id="@+id/linearLayout1"
 			android:layout_margin="16dp">
 			<Button
-				android:text="＋10分"
+				android:text="+10分"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				android:id="@+id/Add10MinButton"
+				android:id="@+id/ButtonAdd10Min"
 				android:textSize="24dp"
 				android:padding="8dp"
 				android:layout_weight="1" />
 			<Button
-				android:text="＋１分"
+				android:text="+１分"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
-				android:id="@+id/Add1MinButton"
+				android:id="@+id/ButtonAdd1Min"
 				android:textSize="24dp"
 				android:padding="8dp"/>
 			<Button
-				android:text="＋10秒"
+				android:text="+10秒"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
-				android:id="@+id/Add10SecButton"
+				android:id="@+id/ButtonAdd10Sec"
 				android:textSize="24dp"
 				android:padding="8dp"/>
 			<Button
-				android:text="＋１秒"
+				android:text="+１秒"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
-				android:id="@+id/Add1SecButton"
+				android:id="@+id/ButtonAdd1Sec"
 				android:textSize="24dp"
 				android:padding="8dp"/>
 		</LinearLayout>
@@ -129,7 +129,7 @@
 			android:text="クリアー"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:id="@+id/ClearButton"
+			android:id="@+id/ButtonClear"
 			android:textSize="24dp"
 			android:padding="8dp"
 			android:layout_margin="16dp"

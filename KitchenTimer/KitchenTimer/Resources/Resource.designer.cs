@@ -2328,22 +2328,22 @@ namespace KitchenTimer
 			public const int ALT = 2131230770;
 			
 			// aapt resource value: 0x7f08008e
-			public const int Add10MinButton = 2131230862;
+			public const int ButtonAdd10Min = 2131230862;
 			
 			// aapt resource value: 0x7f080091
-			public const int Add10SecButton = 2131230865;
+			public const int ButtonAdd10Sec = 2131230865;
 			
 			// aapt resource value: 0x7f08008f
-			public const int Add1MinButton = 2131230863;
+			public const int ButtonAdd1Min = 2131230863;
 			
 			// aapt resource value: 0x7f080092
-			public const int Add1SecButton = 2131230866;
+			public const int ButtonAdd1Sec = 2131230866;
+			
+			// aapt resource value: 0x7f080094
+			public const int ButtonClear = 2131230868;
 			
 			// aapt resource value: 0x7f080033
 			public const int CTRL = 2131230771;
-			
-			// aapt resource value: 0x7f080094
-			public const int ClearButton = 2131230868;
 			
 			// aapt resource value: 0x7f080034
 			public const int FUNCTION = 2131230772;
