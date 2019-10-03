@@ -2342,6 +2342,9 @@ namespace KitchenTimer
 			// aapt resource value: 0x7f080094
 			public const int ButtonClear = 2131230868;
 			
+			// aapt resource value: 0x7f08008c
+			public const int ButtonStart = 2131230860;
+			
 			// aapt resource value: 0x7f080033
 			public const int CTRL = 2131230771;
 			
@@ -2359,9 +2362,6 @@ namespace KitchenTimer
 			
 			// aapt resource value: 0x7f080037
 			public const int SYM = 2131230775;
-			
-			// aapt resource value: 0x7f08008c
-			public const int StartButton = 2131230860;
 			
 			// aapt resource value: 0x7f0800a6
 			public const int action0 = 2131230886;

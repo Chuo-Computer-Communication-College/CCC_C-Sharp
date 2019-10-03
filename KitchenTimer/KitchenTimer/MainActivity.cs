@@ -9,7 +9,9 @@ namespace KitchenTimer
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        private bool _blActuated = false;
+        private Button ButtonStart;
+
+        private bool _blStarted = false;
 
         private int _intRemainingMilliSec = 0;
 
@@ -47,12 +49,30 @@ namespace KitchenTimer
 
             buttonClear.Click += (s, e) =>
             {
-                _blActuated = false;
+                _blStarted = false;
 
                 _intRemainingMilliSec = 0;
 
                 ShowRemainingTime();
             };
+
+            ButtonStart = FindViewById<Button>(Resource.Id.ButtonStart);
+
+            ButtonStart.Click += ButtonStart_Click;
+        }
+
+        private void ButtonStart_Click(object sender, System.EventArgs e)
+        {
+            _blStarted = !_blStarted;
+
+            if (_blStarted)
+            {
+                ButtonStart.Text = "ストップ";
+            }
+            else
+            {
+                ButtonStart.Text = "スタート";
+            }
         }
 
         private void ButtonAdd10Min_Click(object sender, System.EventArgs e)

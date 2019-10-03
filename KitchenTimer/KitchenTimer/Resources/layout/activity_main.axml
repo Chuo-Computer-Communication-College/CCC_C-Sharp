@@ -23,7 +23,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@id/RemainingTimeTextView"
-		android:id="@+id/StartButton"
+		android:id="@+id/ButtonStart"
 		android:textSize="32dp"
 		android:layout_margin="16dp"
 		android:padding="8dp" />
@@ -33,7 +33,7 @@
 		android:minHeight="25px"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_below="@id/StartButton"
+		android:layout_below="@id/ButtonStart"
 		android:id="@+id/linearLayout1"
 		android:layout_margin="16dp">
 		<Button
@@ -74,7 +74,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_below="@id/RemainingTimeTextView"
-			android:id="@+id/StartButton"
+			android:id="@+id/ButtonStart"
 			android:textSize="32dp"
 			android:layout_margin="16dp"
 			android:padding="8dp" />
@@ -84,7 +84,7 @@
 			android:minHeight="25px"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_below="@id/StartButton"
+			android:layout_below="@id/ButtonStart"
 			android:id="@+id/linearLayout1"
 			android:layout_margin="16dp">
 			<Button
