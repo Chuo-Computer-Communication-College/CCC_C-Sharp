@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Widget;
 using System.Threading;
 using System;
+using Android.Media;
 
 namespace KitchenTimer
 {
@@ -111,6 +112,10 @@ namespace KitchenTimer
                     _intRemainingMilliSec = 0;
 
                     buttonStart.Text = "スタート";
+
+                    var tg = new ToneGenerator(Stream.System, 50);
+
+                    tg.StartTone(Tone.PropBeep);
 	            }
 
                 ShowRemainingTime();
