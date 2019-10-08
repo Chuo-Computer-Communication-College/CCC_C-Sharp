@@ -3,13 +3,17 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using System.Threading;
+using System;
 
 namespace KitchenTimer
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        private Button ButtonStart;
+        private Button buttonStart;
+
+        private Timer timerKitchen;
 
         private bool _blStarted = false;
 
@@ -56,23 +60,11 @@ namespace KitchenTimer
                 ShowRemainingTime();
             };
 
-            ButtonStart = FindViewById<Button>(Resource.Id.ButtonStart);
+            buttonStart = FindViewById<Button>(Resource.Id.ButtonStart);
 
-            ButtonStart.Click += ButtonStart_Click;
-        }
+            buttonStart.Click += ButtonStart_Click;
 
-        private void ButtonStart_Click(object sender, System.EventArgs e)
-        {
-            _blStarted = !_blStarted;
-
-            if (_blStarted)
-            {
-                ButtonStart.Text = "ストップ";
-            }
-            else
-            {
-                ButtonStart.Text = "スタート";
-            }
+            timerKitchen = new Timer(Timer_OnTick, null, 0, 100);
         }
 
         private void ButtonAdd10Min_Click(object sender, System.EventArgs e)
@@ -87,11 +79,42 @@ namespace KitchenTimer
             AddRemainingTime(10);
         }
 
-        private void ShowRemainingTime()
+        private void ButtonStart_Click(object sender, System.EventArgs e)
         {
-            var vrSecond = _intRemainingMilliSec / 1000;
+            _blStarted = !_blStarted;
 
-            FindViewById<TextView>(Resource.Id.RemainingTimeTextView).Text = string.Format("{0:f0}:{1:d2}", vrSecond / 60, vrSecond % 60);
+            if (_blStarted)
+            {
+                buttonStart.Text = "ストップ";
+            }
+            else
+            {
+                buttonStart.Text = "スタート";
+            }
+        }
+
+        private void Timer_OnTick(object state)
+        {
+            if (!_blStarted)
+            {
+                return;
+            }
+
+            RunOnUiThread(() => 
+            {
+                _intRemainingMilliSec -= 100;
+
+                if (_intRemainingMilliSec <= 0)
+	            {
+                    _blStarted = false;
+
+                    _intRemainingMilliSec = 0;
+
+                    buttonStart.Text = "スタート";
+	            }
+
+                ShowRemainingTime();
+            });
         }
 
         private void AddRemainingTime(int second)
@@ -99,6 +122,13 @@ namespace KitchenTimer
             _intRemainingMilliSec += second * 1000;
 
             ShowRemainingTime();
+        }
+
+        private void ShowRemainingTime()
+        {
+            var vrSecond = _intRemainingMilliSec / 1000;
+
+            FindViewById<TextView>(Resource.Id.RemainingTimeTextView).Text = string.Format("{0:f0}:{1:d2}", vrSecond / 60, vrSecond % 60);
         }
     }
 }
